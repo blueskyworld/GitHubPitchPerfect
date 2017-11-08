@@ -6,10 +6,18 @@
 //  Copyright © 2015 Udacity. All rights reserved.
 //
 
+
+
 extension Hero {
     
     func sortLeastToGreatest(inventory: [UDItem]) -> [UDItem] {
-        return [UDItem]()
+        
+        let sortedInv = inventory.sorted(by: {(item1:UDItem, item2:UDItem) -> Bool in return item1 < item2 })
+        
+        return sortedInv
+        
+        
+        
     }
     
 }

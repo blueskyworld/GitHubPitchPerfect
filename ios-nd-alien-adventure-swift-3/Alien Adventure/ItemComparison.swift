@@ -8,8 +8,21 @@
 
 import Foundation
 
+//func <(lhs: UDItem, rhs: UDItem) -> Bool {
+//    return true
+//}
+
 func <(lhs: UDItem, rhs: UDItem) -> Bool {
-    return true
+    var rarestItem: Bool
+    if lhs.rarity == rhs.rarity && lhs.baseValue < rhs.baseValue {
+        rarestItem = true
+    } else if lhs.rarity.rawValue < rhs.rarity.rawValue {
+        rarestItem = true
+    } else {
+        rarestItem = false
+    }
+    return rarestItem
 }
+
 
 // If you have completed this function and it is working correctly, feel free to skip this part of the adventure by opening the "Under the Hood" folder, and making the following change in Settings.swift: "static var RequestsToSkip = 5"

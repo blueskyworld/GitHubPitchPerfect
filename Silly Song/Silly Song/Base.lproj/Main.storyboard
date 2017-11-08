@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BradleyHand-Bold.ttf">
+            <string>BradleyHandITCTT-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAt-2S-3en">
+                                <rect key="frame" x="28" y="194" width="319" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Lorem ipsum dolor sit er elit lamet, consectetaur ">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="kQa-A6-z7n" userLabel="Name Field">
+                                <rect key="frame" x="92.666666666666686" y="145" width="190.66666666666663" height="29"/>
+                                <viewLayoutGuide key="safeArea" id="ybH-d7-oW3"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="P4p-pD-VrA"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="8fY-Pp-feR"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFL-LQ-zIM">
+                                <rect key="frame" x="108" y="73" width="159" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="CtF-Th-q7Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oHA-62-5In" firstAttribute="bottom" secondItem="uAt-2S-3en" secondAttribute="bottom" constant="124" id="9E3-NY-43B"/>
+                            <constraint firstItem="kQa-A6-z7n" firstAttribute="centerX" secondItem="uAt-2S-3en" secondAttribute="centerX" id="HSn-t8-Bf9"/>
+                            <constraint firstItem="OFL-LQ-zIM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KGz-5l-ZsY"/>
+                            <constraint firstItem="uAt-2S-3en" firstAttribute="top" secondItem="kQa-A6-z7n" secondAttribute="bottom" constant="20" id="NUF-pj-G7o"/>
+                            <constraint firstItem="OFL-LQ-zIM" firstAttribute="centerX" secondItem="kQa-A6-z7n" secondAttribute="centerX" id="Pvr-iv-JG4"/>
+                            <constraint firstItem="OFL-LQ-zIM" firstAttribute="leading" secondItem="oHA-62-5In" secondAttribute="leading" constant="108" id="Tar-q9-Sc0"/>
+                            <constraint firstItem="uAt-2S-3en" firstAttribute="leading" secondItem="oHA-62-5In" secondAttribute="leading" constant="28" id="XN9-42-9zs"/>
+                            <constraint firstItem="OFL-LQ-zIM" firstAttribute="top" secondItem="oHA-62-5In" secondAttribute="top" constant="29" id="ZYz-Tn-aJx"/>
+                            <constraint firstItem="kQa-A6-z7n" firstAttribute="top" secondItem="OFL-LQ-zIM" secondAttribute="bottom" constant="15" id="o2F-CG-XZ3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oHA-62-5In"/>
+                    </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="uAt-2S-3en" id="fvs-qB-rwi"/>
+                        <outlet property="nameField" destination="kQa-A6-z7n" id="ZH3-Am-PpG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="29.23538230884558"/>
+        </scene>
+    </scenes>
+</document>
