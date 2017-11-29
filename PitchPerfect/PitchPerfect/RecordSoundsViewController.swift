@@ -17,23 +17,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        stopRecordingButton.contentMode = .scaleAspectFit
-        recordButton.contentMode = .scaleAspectFit
+    func switchLabelsAndButtons(isRecording: Bool) {
+        recordingLabel.text = isRecording ? "Recording in progress" : "Tap to record"
+        //recordButton.isEnabled = !isRecording
+        //stopRecordingButton.isEnabled = isRecording
     }
     // MARK: This flips the Label and Record buttons
     func configureUI(isRecording: Bool) {
-        if isRecording {
-            recordingLabel.text = "Tap to Record"
-            recordButton.isEnabled = true
-            stopRecordingButton.isEnabled = false
-        } else {
-            recordingLabel.text = "Recording in Progress"
-            recordButton.isEnabled = false
-            stopRecordingButton.isEnabled = true
-        }
+        recordingLabel.text = !isRecording ? "Recording in progress" : "Tap to record"
+        recordButton.isEnabled = isRecording
+        stopRecordingButton.isEnabled = !isRecording
     }
     // MARK: This records the audio
     @IBAction func recordAudio(_ sender: Any) {
