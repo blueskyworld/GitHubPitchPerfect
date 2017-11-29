@@ -20,6 +20,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        stopRecordingButton.contentMode = .scaleAspectFit
+        recordButton.contentMode = .scaleAspectFit
     }
     // MARK: This flips the Label and Record buttons
     func configureUI(isRecording: Bool) {
